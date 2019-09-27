@@ -7,12 +7,13 @@ const server = express();
 server.use(express.static('dist'));
 
 server.get('/', (req, res) => {
-    const initialMarkup = ReactDOMServer.renderToString(<App />);
+  const initialMarkup = ReactDOMServer.renderToString(<App />);
 
-    res.send(`
+  res.send(`
     <html>
       <head>
         <title>Sample React App</title>
+        <link rel="stylesheet" href="/main.css">
       </head>
       <body>
         <div id="mountNode">${initialMarkup}</div>
